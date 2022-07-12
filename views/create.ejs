@@ -1,0 +1,59 @@
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <p>Create a new Post</p>
+                <% if(postError.length > 0){ %>
+                    <div class="alert alert-danger">
+                        <%= postError %>                             
+                    </div>
+                <% } %>
+                <div class="my-5">
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- * * SB Forms Contact Form * *-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- This form is pre-integrated with SB Forms.-->
+                    <!-- To make this form functional, sign up at-->
+                    <!-- https://startbootstrap.com/solution/contact-forms-->
+                    <!-- to get an API token!-->
+                    <form id="postForm" method="post" action="/post">
+                        
+                        <div class="form-floating">
+                            <input class="form-control" id="title" value="<%= data.title %>"  name="title" type="text" placeholder="Title" data-sb-validations="" />
+                            <label for="title">Title</label>
+                            <div class="invalid-feedback" data-sb-feedback="title:">A title is .</div>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" name="subtitle" value="<%= data.subtitle %>"  id="subtitle" type="text" placeholder="Enter your subtitle..." data-sb-validations=",subtitle" />
+                            <label for="subtitle">subtitle</label>
+                            <div class="invalid-feedback" data-sb-feedback="subtitle:">An subtitle is .</div>
+                            <div class="invalid-feedback" data-sb-feedback="subtitle:subtitle">subtitle is not valid.</div>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" name="content" id="content" value="<%= data.content %>"  type="tel" placeholder="Enter your content..." data-sb-validations="" />
+                            <label for="content">content</label>
+                            <div class="invalid-feedback" data-sb-feedback="content:">A content  is .</div>
+                        </div>
+                        <br />
+                        
+                        <br />
+                        <!-- Submit success message-->
+                        <!---->
+                        <!-- This is what your users will see when the form-->
+                        <!-- has successfully submitted-->
+                        
+                        <!-- Submit error message-->
+                        <!---->
+                        <!-- This is what your users will see when there is-->
+                        <!-- an error submitting the form-->
+                        <!-- Submit Button-->
+                        <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.js" integrity="sha512-6F1RVfnxCprKJmfulcxxym1Dar5FsT/V2jiEUvABiaEiFWoQ8yHvqRM/Slf0qJKiwin6IDQucjXuolCfCKnaJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
